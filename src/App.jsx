@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="product-list" element={<ProductList />} />
         <Route path="product-detail/:id" element={<ProductDetail />} />
-        <Route path="cart-list" element={<CartList />} />
+        <Route path="cart" element={<CartList />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Fragment>
