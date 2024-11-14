@@ -12,6 +12,7 @@ const ShoppingCartProvider = ({ children }) => {
   const [loading, setLaoding] = useState(false);
   const [productDetails, setProductDetails] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  
   const fetchProductsList = async () => {
     setLaoding(true);
     const apiResp = await fetch("https://dummyjson.com/products");
@@ -36,7 +37,7 @@ const ShoppingCartProvider = ({ children }) => {
         productDetails,
         setProductDetails,
         cartItems,
-        setCartItems
+        setCartItems,
       }}
     >
       {children}
