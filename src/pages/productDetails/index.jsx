@@ -5,8 +5,11 @@ import { useParams, useNavigate } from "react-router-dom";
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { productDetails, setProductDetails, cartItems, setCartItems } =
-    useContext(ShoppingCartContext);
+  const {
+    productDetails,
+    setProductDetails,
+    handleAddToCart,
+  } = useContext(ShoppingCartContext);
 
   const getProductDetailbyId = async () => {
     try {
@@ -19,32 +22,6 @@ const ProductDetail = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleAddToCart = (getProdDetail) => {
-    const cpyOfExistingCartItems = [...cartItems];
-    const findIndexOfItem = cpyOfExistingCartItems.findIndex(
-      (item) => item.id === getProdDetail.id
-    );
-    if (findIndexOfItem === -1) {
-      cpyOfExistingCartItems.push({
-        ...getProdDetail,
-        quantity: 1,
-      });
-    } else {
-      console.log("if item not");
-    //   const item = cpyOfExistingCartItems.filter(
-    //     (item) => item.id === getProdDetail.id
-    //   );
-    //   cpyOfExistingCartItems.push({
-    //     ...item,
-    //     quantity: item.quantity + 1,
-    //   });
-    }
-    setCartItems(cpyOfExistingCartItems);
-    console.log(cpyOfExistingCartItems);
-    localStorage.setItem('cartItems',JSON.stringify(cpyOfExistingCartItems))
-    navigate("/cart");
   };
 
   useEffect(() => {
