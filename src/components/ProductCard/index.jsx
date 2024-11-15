@@ -10,7 +10,6 @@ const ProductCard = ({ prodData }) => {
   };
   return (
     <>
-      {/* border border-cyan-700 */}
       {prodData.length > 0 ? (
         prodData.map((x) => (
           <div

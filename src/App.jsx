@@ -1,6 +1,4 @@
-import { Fragment, useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import { Fragment } from "react";
 import "./App.css";
 import ProductList from "./pages/productList";
 import ProductDetail from "./pages/productDetails";
@@ -16,7 +14,7 @@ function App() {
         <Route path="product-list" element={<ProductList />} />
         <Route path="product-detail/:id" element={<ProductDetail />} />
         <Route path="cart" element={<CartList />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={<PageNotFound />} />ll
       </Routes>
     </Fragment>
   );

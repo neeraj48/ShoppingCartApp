@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { ShoppingCartContext } from "../../contextApi";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -29,7 +29,6 @@ const ProductDetail = () => {
   }, [id]);
 
   return (
-    // <div>
     <div className="p-6 lg:max-w-7xl max-w-rxl mx-auto bg-gray-200">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 shadow-lg p-6 bg-white">
         <div className="lg:col-span-3 w-full lg:sticky top-0 text-center">
@@ -90,7 +89,6 @@ const ProductDetail = () => {
         </div>
       </div>
     </div>
-    // </div>
   );
 };
 

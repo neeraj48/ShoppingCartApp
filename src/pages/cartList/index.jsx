@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCartContext } from "../../contextApi";
 import CartTile from "../../components/CartTile";
@@ -48,14 +48,13 @@ const CartList = () => {
             <button
               className="bg-green-600 p-2 rounded-md  text-white disabled:opacity-50"
               onClick={handleCheckout}
-              disabled={cartItems?.length>0?false:true}
+              disabled={cartItems?.length > 0 ? false : true}
             >
               Checkout
             </button>
             <button
               className="bg-red-600 p-2 rounded-md  text-white "
               onClick={gotoShopping}
-             
             >
               Continue Shopping
             </button>

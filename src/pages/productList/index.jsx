@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ShoppingCartContext } from "../../contextApi/index";
 import ProductCard from "../../components/ProductCard";
 import { Badge } from "@mui/material";
@@ -7,18 +7,14 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const ProductList = () => {
   const navigate = useNavigate();
-  const { productList, loading, cartItems, setCartItems } =
+  const { productList, loading, cartItems } =
     useContext(ShoppingCartContext);
   if (loading)
-    return <h1 className="font-bold text-center mt-20">Loading data...</h1>;
+    return <h1 className="font-bold text-center mt-20 text-5xl">Loading data...</h1>;
 
   const gotoCartPage = () => {
     navigate("/cart");
   };
-
-  //   useEffect(() => {
-  // setCartItems(JSON.parse(localStorage.getItem("cartItems")));
-  //   },[]);
 
   return (
     <section className="py-12 bg-gray-300 sm:py-16 lg:py-5">
