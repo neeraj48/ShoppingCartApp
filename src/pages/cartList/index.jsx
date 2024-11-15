@@ -9,6 +9,7 @@ const CartList = () => {
   const handleCheckout = () => {
     alert("Happy Shopping");
     setCartItems([]);
+    localStorage.clear();
   };
   const gotoShopping = () => {
     navigate("/product-list");
